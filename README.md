@@ -1,4 +1,4 @@
 JavaOne 2014
 =================
 
-vertx <-> JavaEE communication through JCA adapter (https://github.com/vert-x/jca-adaptor)
+Vert.x Nashorn <-> JavaEE 6 communication through [JCA adapter module](https://github.com/vert-x/jca-adaptor)
