@@ -1,0 +1,15 @@
+{
+    "main": "main.js",
+    "deploys": "io.vertx~lang-nashorn~1.0.0-beta2",
+    "includes": "io.vertx~lang-nashorn~1.0.0-beta2",
+
+    "description": "Javaone Vertx",
+    "licenses": ["The Apache Software License Version 2.0"],
+    "author": "Leonardo Zanivan",
+
+    "developers": ["Leonardo Zanivan", "Michel Graciano"],
+    "keywords": ["javaone", "vertx", "nashorn"],
+
+    "auto-redeploy": true,
+    "preserve-cwd": true
+}

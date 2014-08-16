@@ -1,4 +1,2 @@
-javaone2014-vertx
+JavaOne 2014 vertx <-> JavaEE communication
 =================
-
-JavaOne 2014 - Vert.x app
