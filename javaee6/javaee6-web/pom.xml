@@ -12,7 +12,7 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>javaee6-web</name>
+    <name>JavaOne JavaEE - Web</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
@@ -47,6 +47,7 @@
     </dependencies>
 
     <build>
+        <finalName>javaee6-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

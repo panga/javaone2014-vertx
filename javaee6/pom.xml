@@ -5,7 +5,7 @@
   <artifactId>javaee6</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>javaee6</name>
+  <name>JavaOne JavaEE</name>
   <modules>
     <module>javaee6-ear</module>
     <module>javaee6-web</module>
