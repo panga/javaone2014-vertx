@@ -1,5 +1,6 @@
 package javaone.ejb;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.ejb.ActivationConfigProperty;
@@ -12,7 +13,8 @@ import org.vertx.java.resourceadapter.inflow.VertxListener;
 @MessageDriven(name = "NotificationService",
         messageListenerInterface = VertxListener.class,
         activationConfig = {
-            @ActivationConfigProperty(propertyName = "address", propertyValue = "inbound-address"),})
+            @ActivationConfigProperty(propertyName = "address", propertyValue = "inbound-address")
+        })
 @ResourceAdapter("jca-adaptor-1.0.3.rar")
 public class NotificationService implements VertxListener {
 
@@ -24,10 +26,10 @@ public class NotificationService implements VertxListener {
 
     @Override
     public <String> void onMessage(Message<String> message) {
-        LOGGER.info("Get a message from Vert.x");
+        LOGGER.info("Got a message from Vert.x");
         final String body = message.body();
-        LOGGER.info("Body of the message: " + body.toString());
-        message.reply("Hi, Got your message: " + body.toString());
+        LOGGER.log(Level.INFO, "Body of the message: {0}", body);
+        message.reply("Hi from Java EE. Got your message: " + body);
     }
 
 }
