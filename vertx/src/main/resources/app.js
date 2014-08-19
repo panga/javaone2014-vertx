@@ -6,7 +6,7 @@ var eventBus = require('vertx/event_bus');
 var http = require("vertx/http");
 var matcher = new http.RouteMatcher();
 
-matcher.noMatch(function(req) {
+matcher.noMatch(function (req) {
     if (req.method() === "HEAD") {
         req.response.end();
     } else {
@@ -17,10 +17,10 @@ matcher.noMatch(function(req) {
 
 var sockJSAddress = "sockjs-server-address";
 
-eventBus.registerHandler(sockJSAddress, function(message, replier) {
+eventBus.registerHandler(sockJSAddress, function (message, replier) {
     container.logger.info("Got message: " + message + "\tReply it now.");
     if (replier) {
-        replier("Got your message: " + message);
+        replier("Hi from Vert.x. Got your message: " + message);
     }
 });
 container.logger.info("Register handler on address: " + sockJSAddress);
@@ -29,7 +29,7 @@ var server = http.createHttpServer()
         .requestHandler(matcher);
 
 var sockJSServer = vertx.createSockJSServer(server);
-sockJSServer.bridge({prefix : '/eventbus'}, [{}], [{}]);
+sockJSServer.bridge({prefix: '/eventbus'}, [{}], [{}]);
 
 var port = container.config["port"] || 8090;
 server.listen(port);
