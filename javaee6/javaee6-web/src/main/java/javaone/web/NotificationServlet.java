@@ -44,10 +44,10 @@ public class NotificationServlet extends HttpServlet {
                     ctx = new InitialContext();
                     VertxConnectionFactory connFactory = (VertxConnectionFactory) ctx.lookup(JNDI_NAME);
                     conn = connFactory.getVertxConnection();
-                    conn.eventBus().send(address, message, (Message<String> assyncMessage) -> {
+                    conn.eventBus().send(address, message, (Message<String> asyncMessage) -> {
                         try {
                             final Writer out = async.getResponse().getWriter();
-                            out.write(assyncMessage.body());
+                            out.write(asyncMessage.body());
                             out.flush();
                             async.complete();
                         } catch (IOException ex) {
